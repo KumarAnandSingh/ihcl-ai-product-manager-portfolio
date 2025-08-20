@@ -1,0 +1,81 @@
+{
+  "environment": "development",
+  "debug_mode": true,
+  "log_level": "DEBUG",
+  
+  "database_path": "data/dev_security_incidents.db",
+  "checkpoint_db_path": "data/dev_workflow_checkpoints.db",
+  "data_retention_days": 90,
+  
+  "redis_url": "redis://localhost:6379/0",
+  "session_ttl_hours": 8,
+  
+  "llm_model": "gpt-4",
+  "llm_temperature": 0.1,
+  "llm_max_tokens": 4000,
+  "llm_timeout_seconds": 60,
+  
+  "max_workflow_steps": 20,
+  "workflow_timeout_minutes": 15,
+  "enable_checkpoints": true,
+  
+  "enable_safety_guardrails": true,
+  "enable_compliance_checks": true,
+  "enable_human_intervention": true,
+  "max_hallucination_rate": 0.1,
+  
+  "property_type": "business_hotel",
+  "property_code": "DEV_HOTEL_001",
+  "guest_privacy_level": "high",
+  "business_hours": {
+    "start": "06:00",
+    "end": "23:00",
+    "timezone": "UTC"
+  },
+  
+  "notification_channels": ["email", "dashboard"],
+  "escalation_contacts": {
+    "security_manager": {
+      "email": "dev.security@example.com",
+      "escalation_delay_minutes": "5"
+    },
+    "general_manager": {
+      "email": "dev.gm@example.com",
+      "escalation_delay_minutes": "10"
+    }
+  },
+  
+  "performance_targets": {
+    "critical_response_time_minutes": 30.0,
+    "high_response_time_minutes": 120.0,
+    "medium_response_time_minutes": 480.0,
+    "automation_rate": 0.70,
+    "quality_score_target": 0.80,
+    "compliance_rate_target": 0.95
+  },
+  
+  "api_rate_limits": {
+    "classification": 1000,
+    "prioritization": 1000,
+    "response_generation": 500
+  },
+  
+  "enable_metrics_collection": true,
+  "metrics_export_interval_minutes": 1,
+  "enable_performance_monitoring": true,
+  
+  "alert_thresholds": {
+    "response_time_critical_minutes": 60.0,
+    "error_rate_percentage": 10.0,
+    "quality_score_minimum": 0.6,
+    "safety_violation_rate": 0.05
+  },
+  
+  "enable_audit_logging": true,
+  "encrypt_sensitive_data": false,
+  "allowed_origins": ["http://localhost:3000", "http://localhost:8000"],
+  
+  "log_directory": "logs/dev",
+  "data_directory": "data/dev",
+  "config_directory": "config"
+}

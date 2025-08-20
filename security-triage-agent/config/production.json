@@ -1,0 +1,91 @@
+{
+  "environment": "production",
+  "debug_mode": false,
+  "log_level": "INFO",
+  
+  "database_path": "data/prod_security_incidents.db",
+  "checkpoint_db_path": "data/prod_workflow_checkpoints.db",
+  "data_retention_days": 365,
+  
+  "redis_url": "redis://redis-cluster:6379/0",
+  "session_ttl_hours": 24,
+  
+  "llm_model": "gpt-4",
+  "llm_temperature": 0.1,
+  "llm_max_tokens": 4000,
+  "llm_timeout_seconds": 120,
+  
+  "max_workflow_steps": 20,
+  "workflow_timeout_minutes": 30,
+  "enable_checkpoints": true,
+  
+  "enable_safety_guardrails": true,
+  "enable_compliance_checks": true,
+  "enable_human_intervention": true,
+  "max_hallucination_rate": 0.05,
+  
+  "property_type": "luxury_resort",
+  "property_code": "IHCL_TAJ_001",
+  "guest_privacy_level": "maximum",
+  "business_hours": {
+    "start": "00:00",
+    "end": "23:59",
+    "timezone": "Asia/Kolkata"
+  },
+  
+  "notification_channels": ["email", "sms", "dashboard", "webhook"],
+  "escalation_contacts": {
+    "security_manager": {
+      "email": "security.manager@tajhotels.com",
+      "phone": "+91-11-2302-6162",
+      "escalation_delay_minutes": "15"
+    },
+    "general_manager": {
+      "email": "gm@tajhotels.com",
+      "phone": "+91-11-2302-6100",
+      "escalation_delay_minutes": "30"
+    },
+    "legal_counsel": {
+      "email": "legal@ihcl.com",
+      "escalation_delay_minutes": "60"
+    },
+    "privacy_officer": {
+      "email": "privacy@ihcl.com",
+      "escalation_delay_minutes": "30"
+    }
+  },
+  
+  "performance_targets": {
+    "critical_response_time_minutes": 15.0,
+    "high_response_time_minutes": 60.0,
+    "medium_response_time_minutes": 240.0,
+    "automation_rate": 0.85,
+    "quality_score_target": 0.95,
+    "compliance_rate_target": 0.98
+  },
+  
+  "api_rate_limits": {
+    "classification": 100,
+    "prioritization": 100,
+    "response_generation": 50
+  },
+  
+  "enable_metrics_collection": true,
+  "metrics_export_interval_minutes": 5,
+  "enable_performance_monitoring": true,
+  
+  "alert_thresholds": {
+    "response_time_critical_minutes": 30.0,
+    "error_rate_percentage": 2.0,
+    "quality_score_minimum": 0.8,
+    "safety_violation_rate": 0.01
+  },
+  
+  "enable_audit_logging": true,
+  "encrypt_sensitive_data": true,
+  "allowed_origins": ["https://*.tajhotels.com", "https://*.ihcl.com"],
+  
+  "log_directory": "/var/log/security-triage-agent",
+  "data_directory": "/var/lib/security-triage-agent",
+  "config_directory": "/etc/security-triage-agent"
+}
