@@ -86,7 +86,7 @@ This portfolio demonstrates expertise in **AI Product Management** through two p
 ## 🎬 Live Demos & Documentation
 
 ### Main Platforms (Interview Ready)
-- **TelecomAssist**: [http://localhost:3000](http://localhost:3000) - Customer service AI with voice & chat
+- **TelecomAssist**: [http://localhost:3002](http://localhost:3002) - Customer service AI with voice & chat
 - **VirtualAgent Platform**: [http://localhost:3004](http://localhost:3004) - Enterprise AI management dashboard
 - **Demo Script**: [DEMO_SCRIPT.md](./DEMO_SCRIPT.md) - Complete 10-12 minute interview presentation
 
@@ -158,7 +158,7 @@ This portfolio demonstrates expertise in **AI Product Management** through two p
 cd my-telecom-ai-agent
 source demo_venv/bin/activate
 python web_app.py
-# Opens at http://localhost:3000
+# Opens at http://localhost:3002
 ```
 
 ### VirtualAgent Platform

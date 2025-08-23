@@ -24,7 +24,7 @@ Let me walk you through both platforms."
 
 ### **Navigation & Setup**
 1. "First, let me demonstrate **TelecomAssist** - our HelloJio equivalent for IHCL customers"
-2. Navigate to: `http://localhost:3000`
+2. Navigate to: `http://localhost:3002`
 3. "This is a **multi-channel AI customer service platform** I designed from scratch"
 
 ### **Core Features Demonstration**
@@ -169,7 +169,7 @@ Thank you for your time. I'd love to answer any questions about the technical im
 ## 📋 **Demo Checklist**
 
 ### **Before Recording:**
-- [ ] Both applications running (`localhost:3000` and `localhost:3004`)
+- [ ] Both applications running (`localhost:3002` and `localhost:3004`)
 - [ ] Browser windows sized appropriately for recording
 - [ ] Test all interactive elements beforehand
 - [ ] Prepare backup talking points if any features don't work
@@ -200,7 +200,7 @@ Thank you for your time. I'd love to answer any questions about the technical im
 - **Deployment instructions** for production setup
 
 ### **Live Demo Links**
-- **TelecomAssist**: `http://localhost:3000`
+- **TelecomAssist**: `http://localhost:3002`
 - **VirtualAgent Platform**: `http://localhost:3004`
 
 ### **Contact Information**
