@@ -58,3 +58,23 @@ htmlcov/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# Interview-specific and internal documentation (keep private)
+DEMO_SCRIPT.md
+IHCL_INTERVIEW_DEMO_SCRIPT.md
+IHCL_INTERVIEW_QA_GUIDE.md
+IHCL-AI-PRODUCT-MANAGER-PORTFOLIO.md
+
+# Development logs and technical upgrade documentation
+**/HINDI_VOICE_TEST_GUIDE.md
+**/UI_UX_UPGRADE_SUMMARY.md
+**/EDGE_TTS_TAKUMI_INTEGRATION_COMPLETE.md
+**/ELEVENLABS_VOICE_SETUP.md
+**/FINAL_UI_SCROLLING_FIX.md
+**/UI_FIXES_AND_ENHANCED_VOICES_UPDATE.md
+**/VOICE_ENHANCEMENT_GUIDE.md
+**/README_DEMO.md
+
+# Additional build files
+.next/
+demo_venv/

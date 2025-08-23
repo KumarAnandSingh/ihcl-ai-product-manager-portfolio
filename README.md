@@ -1,10 +1,10 @@
-# IHCL AI Product Manager Portfolio
+# AI Product Manager Portfolio
 
-> **Enterprise-Grade AI Platforms for Hospitality & Customer Experience**
+> **Enterprise-Grade Agentic AI Systems & Platforms**
 
 ## 🎯 Overview
 
-This portfolio demonstrates expertise in **AI Product Management** through two production-ready platforms built specifically for IHCL's digital transformation needs. Features enterprise-grade AI systems with multi-language support, advanced analytics, and comprehensive deployment capabilities.
+This portfolio demonstrates **hands-on expertise in AI Product Management** through production-ready agentic AI systems and enterprise platforms. Showcasing end-to-end AI product development from technical architecture to business impact measurement, with a focus on hospitality and customer experience domains.
 
 ## 🚀 Featured AI Platforms
 
@@ -85,15 +85,18 @@ This portfolio demonstrates expertise in **AI Product Management** through two p
 
 ## 🎬 Live Demos & Documentation
 
-### Main Platforms (Interview Ready)
-- **TelecomAssist**: [http://localhost:3002](http://localhost:3002) - Customer service AI with voice & chat
-- **VirtualAgent Platform**: [http://localhost:3004](http://localhost:3004) - Enterprise AI management dashboard
-- **Demo Script**: [DEMO_SCRIPT.md](./DEMO_SCRIPT.md) - Complete 10-12 minute interview presentation
+### Live Demonstrations
+- **TelecomAssist Platform**: Multi-modal customer service AI with voice recognition and 55+ language support
+- **VirtualAgent Management**: Enterprise dashboard for AI agent lifecycle management and monitoring
+- **Security Triage Agent**: Autonomous incident response system with multi-step reasoning
+- **Hotel Operations Assistant**: Domain-specific agent for hospitality operations automation
+- **AgentOps Dashboard**: Comprehensive monitoring and evaluation framework for AI systems
 
-### Additional Projects
-- [Security Incident Triage Demo](./demos/security-triage-demo.mp4)
-- [Hotel Operations Assistant Demo](./demos/hotel-ops-demo.mp4)
-- [AgentOps Dashboard Walkthrough](./demos/agentops-demo.mp4)
+### Technical Architecture
+- **Agentic AI Systems**: LangGraph orchestration with tool-calling and human-in-the-loop workflows
+- **Multi-LLM Orchestration**: Cost-optimized routing across GPT-4, Claude, and specialized models
+- **Production Engineering**: Real-time monitoring, auto-scaling, and enterprise security compliance
+- **Evaluation Frameworks**: Golden dataset testing, hallucination detection, and A/B testing infrastructure
 
 ## 📊 Key Metrics & Business Impact
 
@@ -151,38 +154,44 @@ This portfolio demonstrates expertise in **AI Product Management** through two p
 - Cost-performance optimization
 - Automatic fallback mechanisms
 
-## 🚀 Quick Start for Interview Demo
+## 🚀 Quick Start & Development
 
-### TelecomAssist Platform
+### Prerequisites
+- Python 3.10+ with virtual environment support
+- Node.js 18+ with npm
+- Git for version control
+
+### Local Development Setup
 ```bash
-cd my-telecom-ai-agent
-source demo_venv/bin/activate
-python web_app.py
-# Opens at http://localhost:3002
+# Clone repository
+git clone https://github.com/KumarAnandSingh/ihcl-ai-product-manager-portfolio.git
+cd ihcl-ai-product-manager-portfolio
+
+# Setup Python projects
+cd security-triage-agent && pip install -r requirements.txt
+cd ../hotel-ops-assistant && pip install -r requirements.txt
+
+# Setup Next.js platforms
+cd virtualagent-platform-dashboard && npm install
+cd ../telecom-ai-nextjs && npm install
 ```
 
-### VirtualAgent Platform
-```bash
-cd virtualagent-platform-dashboard
-npm install
-npm run dev
-# Opens at http://localhost:3004
-```
+### Architecture Documentation
+Each project includes comprehensive documentation:
+- **Technical Architecture**: System design and component interaction
+- **API Documentation**: Endpoint specifications and integration guides  
+- **Deployment Guides**: Production deployment instructions
+- **Evaluation Metrics**: Performance benchmarks and success criteria
 
-### Demo Presentation
-- Follow [DEMO_SCRIPT.md](./DEMO_SCRIPT.md) for complete 10-12 minute presentation
-- Both platforms are production-ready and fully functional
-- Demonstrates enterprise AI product management capabilities
-
-## 🎯 Interview Readiness Checklist
-- ✅ Two fully functional AI platforms (TelecomAssist + VirtualAgent)
-- ✅ Enterprise-grade UI/UX with modern tech stack
-- ✅ Comprehensive demo script with business metrics
-- ✅ Technical documentation and architecture guides
-- ✅ Multi-language support and accessibility features
-- ✅ Real-time analytics and monitoring capabilities
+## 🎯 AI Product Management Expertise Demonstrated
+- ✅ **Agentic AI Architecture**: Multi-step reasoning with LangGraph orchestration
+- ✅ **Enterprise Scalability**: Production-ready systems with monitoring and alerting
+- ✅ **Business Impact Measurement**: ROI tracking, cost optimization, and KPI dashboards
+- ✅ **Technical Leadership**: Full-stack development from backend APIs to frontend UX
+- ✅ **Domain Expertise**: Hospitality, customer service, and security operations
+- ✅ **Compliance & Safety**: PII handling, audit trails, and hallucination detection
 
 ---
 
 **Contact**: Anand Kumar Singh | singhanand779@gmail.com | [LinkedIn](https://www.linkedin.com/in/anand-kumar-singh-pm/)  
-**Built for**: IHCL AI Product Manager Position - Demonstrating Enterprise AI Platform Development
+**Portfolio Focus**: Demonstrating Enterprise AI Product Management & Agentic System Development
