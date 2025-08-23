@@ -8,21 +8,21 @@ This portfolio demonstrates **hands-on expertise in AI Product Management** thro
 
 ## 🚀 Featured AI Platforms
 
-### 1. TelecomAssist - Customer Service AI Platform (HelloJio Equivalent)
-**Multi-channel AI customer service platform with voice, text, and visual capabilities**
-- 🏗️ **Tech Stack**: React/Next.js, Python Flask, Edge-TTS, Web Speech API
-- 🎯 **Use Case**: 24/7 multilingual customer support for IHCL guests
-- 🔧 **Features**: Voice recognition, natural TTS, visual responses, multi-language support
-- 📊 **Business Impact**: 40% faster response time, 24/7 availability, Hindi & English support
-- 🌐 **Live Demo**: [http://localhost:3000](http://localhost:3000)
-
-### 2. VirtualAgent Platform - Enterprise AI Management (Jio EVA Equivalent)
+### 1. VirtualAgent Platform - Enterprise AI Management (Jio EVA Equivalent)
 **Enterprise dashboard for deploying and managing AI agents at scale**
 - 🏗️ **Tech Stack**: React/Next.js 15, TypeScript, shadcn/ui, Recharts
 - 🎯 **Use Case**: AI agent deployment, monitoring, and management for hotel operations
 - 🔧 **Features**: Multi-LLM orchestration, analytics dashboard, agent lifecycle management
 - 📊 **Business Impact**: 30% cost optimization, centralized AI management, role-based access
 - 🌐 **Live Demo**: [http://localhost:3004](http://localhost:3004)
+
+### 2. TelecomAssist - Customer Service AI Platform (HelloJio Equivalent)
+**Multi-channel AI customer service platform with voice, text, and visual capabilities**
+- 🏗️ **Tech Stack**: React/Next.js, Python Flask, Edge-TTS, Web Speech API
+- 🎯 **Use Case**: 24/7 multilingual customer support for IHCL guests
+- 🔧 **Features**: Voice recognition, natural TTS, visual responses, multi-language support
+- 📊 **Business Impact**: 40% faster response time, 24/7 availability, Hindi & English support
+- 🌐 **Live Demo**: [http://localhost:3002](http://localhost:3002)
 
 ### 3. Security Incident Triage Agent
 **Production-ready agentic system for automated security incident response**
@@ -86,8 +86,8 @@ This portfolio demonstrates **hands-on expertise in AI Product Management** thro
 ## 🎬 Live Demos & Documentation
 
 ### Live Demonstrations
-- **TelecomAssist Platform**: Multi-modal customer service AI with voice recognition and 55+ language support
 - **VirtualAgent Management**: Enterprise dashboard for AI agent lifecycle management and monitoring
+- **TelecomAssist Platform**: Multi-modal customer service AI with voice recognition and 55+ language support
 - **Security Triage Agent**: Autonomous incident response system with multi-step reasoning
 - **Hotel Operations Assistant**: Domain-specific agent for hospitality operations automation
 - **AgentOps Dashboard**: Comprehensive monitoring and evaluation framework for AI systems
@@ -100,15 +100,6 @@ This portfolio demonstrates **hands-on expertise in AI Product Management** thro
 
 ## 📊 Key Metrics & Business Impact
 
-### TelecomAssist Platform
-| Metric | Achievement |
-|--------|------------|
-| Response Time Improvement | 40% faster than traditional support |
-| Language Support | Hindi + English with regional accents |
-| Availability | 24/7 automated customer service |
-| Voice Recognition Accuracy | 95% in noisy environments |
-| User Satisfaction | 4.7/5 customer rating |
-
 ### VirtualAgent Platform  
 | Metric | Achievement |
 |--------|------------|
@@ -117,6 +108,15 @@ This portfolio demonstrates **hands-on expertise in AI Product Management** thro
 | Operational Efficiency | 60% reduction in manual tasks |
 | System Uptime | 99.8% availability SLA |
 | Multi-Property Scaling | Centralized management for hotel chain |
+
+### TelecomAssist Platform
+| Metric | Achievement |
+|--------|------------|
+| Response Time Improvement | 40% faster than traditional support |
+| Language Support | Hindi + English with regional accents |
+| Availability | 24/7 automated customer service |
+| Voice Recognition Accuracy | 95% in noisy environments |
+| User Satisfaction | 4.7/5 customer rating |
 
 ### Overall Portfolio Metrics
 | Metric | Target | Achieved |
