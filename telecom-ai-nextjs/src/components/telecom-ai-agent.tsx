@@ -7,6 +7,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { AnimatedCard, AnimatedMetricCard } from "@/components/animated-card";
+import { motion } from "framer-motion";
 import { 
   Mic, 
   MicOff, 
@@ -16,7 +19,11 @@ import {
   Zap, 
   BarChart3, 
   Globe, 
-  Shield 
+  Shield,
+  Phone,
+  Wifi,
+  Signal,
+  Command
 } from "lucide-react";
 
 interface Message {
@@ -388,14 +395,36 @@ export function TelecomAIAgent() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100">
       <div className="max-w-7xl mx-auto bg-white shadow-2xl flex flex-col" style={{ minHeight: '100vh' }}>
         {/* Header */}
-        <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white p-6 text-center relative overflow-hidden flex-shrink-0">
+        <motion.div 
+          className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white p-6 text-center relative overflow-hidden flex-shrink-0"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="relative z-10">
-            <h1 className="text-3xl font-bold mb-1">My Telecom AI Agent</h1>
-            <p className="text-lg opacity-90 mb-1">Production-Scale Customer Service AI</p>
-            <p className="text-sm opacity-80">Enterprise-grade multilingual voice assistant with tool integration</p>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              >
+                <Phone className="h-8 w-8" />
+              </motion.div>
+              <h1 className="text-3xl font-bold">TelecomAssist AI Platform</h1>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Command className="h-5 w-5 opacity-70 hover:opacity-100" />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Press ⌘K for quick commands</p>
+                </TooltipContent>
+              </Tooltip>
+            </div>
+            <p className="text-lg opacity-90 mb-1">Advanced Agentic Telecommunications Operations</p>
+            <p className="text-sm opacity-80">Enterprise-grade multilingual AI with autonomous decision-making capabilities</p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Main Content */}
         <div className="p-6 bg-slate-50 flex-1 overflow-hidden">
@@ -553,86 +582,125 @@ export function TelecomAIAgent() {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Quick Actions */}
-            <Card>
+            <AnimatedCard delay={0.2}>
               <CardHeader>
-                <CardTitle>Quick Actions</CardTitle>
+                <CardTitle className="flex items-center gap-2">
+                  <Zap className="h-5 w-5" />
+                  Quick Actions
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
                 {sampleQueries.map((query, index) => (
-                  <Button
+                  <motion.div
                     key={index}
-                    variant="outline"
-                    className="w-full justify-start text-left h-auto p-3"
-                    onClick={() => {
-                      setInputValue(query.text);
-                      handleSendMessage(query.text);
-                    }}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 + index * 0.1 }}
                   >
-                    <span className="mr-2">{query.icon}</span>
-                    {query.text}
-                  </Button>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start text-left h-auto p-3 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all duration-200"
+                      onClick={() => {
+                        setInputValue(query.text);
+                        handleSendMessage(query.text);
+                      }}
+                    >
+                      <span className="mr-2">{query.icon}</span>
+                      {query.text}
+                    </Button>
+                  </motion.div>
                 ))}
               </CardContent>
-            </Card>
+            </AnimatedCard>
 
             {/* Live Metrics */}
-            <Card>
+            <AnimatedCard delay={0.4}>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Activity className="h-5 w-5" />
-                  Live Metrics
+                  Real-time Performance
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-3 bg-slate-50 rounded-lg">
-                    <div className="text-2xl font-bold text-indigo-600">{metrics.totalQueries}</div>
-                    <div className="text-sm text-slate-600">Queries</div>
-                  </div>
-                  <div className="text-center p-3 bg-slate-50 rounded-lg">
-                    <div className="text-2xl font-bold text-indigo-600">{metrics.avgResponseTime.toFixed(1)}s</div>
-                    <div className="text-sm text-slate-600">Avg Time</div>
-                  </div>
-                  <div className="text-center p-3 bg-slate-50 rounded-lg">
-                    <div className="text-2xl font-bold text-indigo-600">{Math.round(metrics.avgConfidence * 100)}%</div>
-                    <div className="text-sm text-slate-600">Confidence</div>
-                  </div>
-                  <div className="text-center p-3 bg-slate-50 rounded-lg">
-                    <div className="text-2xl font-bold text-indigo-600">{Math.round(metrics.containmentRate * 100)}%</div>
-                    <div className="text-sm text-slate-600">Contained</div>
-                  </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <AnimatedMetricCard
+                    title="Total Queries"
+                    value={metrics.totalQueries}
+                    icon={BarChart3}
+                    delay={0.5}
+                  />
+                  <AnimatedMetricCard
+                    title="Response Time"
+                    value={`${metrics.avgResponseTime.toFixed(1)}s`}
+                    trend="up"
+                    trendValue="40% faster"
+                    icon={Zap}
+                    delay={0.6}
+                  />
+                  <AnimatedMetricCard
+                    title="AI Confidence"
+                    value={`${Math.round(metrics.avgConfidence * 100)}%`}
+                    trend="up"
+                    trendValue="High accuracy"
+                    icon={Brain}
+                    delay={0.7}
+                  />
+                  <AnimatedMetricCard
+                    title="Auto-Resolution"
+                    value={`${Math.round(metrics.containmentRate * 100)}%`}
+                    trend="up"
+                    trendValue="Autonomous"
+                    icon={Activity}
+                    delay={0.8}
+                  />
                 </div>
               </CardContent>
-            </Card>
+            </AnimatedCard>
           </div>
         </div>
 
           {/* Feature Highlights */}
-          <Card className="mt-6">
+          <AnimatedCard delay={0.9} className="mt-6">
             <CardHeader>
-              <CardTitle>Production Features Demonstrated</CardTitle>
+              <CardTitle className="flex items-center gap-2">
+                <Shield className="h-5 w-5" />
+                Advanced Agentic Capabilities
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[
-                  { icon: Brain, text: "Multi-step conversation workflows with confidence-based decision making" },
-                  { icon: Zap, text: "Real-time tool integration for recharges, bill payments, and technical support" },
-                  { icon: BarChart3, text: "Production-grade performance monitoring and metrics collection" },
-                  { icon: Globe, text: "Multilingual support with intelligent intent detection and cultural adaptation" },
-                  { icon: Mic, text: "High-quality voice recognition and natural text-to-speech in multiple languages" },
-                  { icon: Shield, text: "Enterprise security with PII protection and comprehensive audit trails" },
+                  { icon: Brain, text: "Autonomous decision-making with multi-step reasoning and confidence thresholds", color: "text-purple-600" },
+                  { icon: Zap, text: "Real-time tool orchestration across telecom systems with automated fallbacks", color: "text-blue-600" },
+                  { icon: BarChart3, text: "Self-monitoring performance with adaptive optimization algorithms", color: "text-green-600" },
+                  { icon: Globe, text: "Context-aware multilingual processing with cultural adaptation", color: "text-orange-600" },
+                  { icon: Mic, text: "Advanced speech processing with emotion detection and voice biometrics", color: "text-pink-600" },
+                  { icon: Shield, text: "Enterprise security with automated threat detection and response", color: "text-red-600" },
                 ].map((feature, index) => {
                   const IconComponent = feature.icon;
                   return (
-                    <div key={index} className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg">
-                      <IconComponent className="h-5 w-5 text-indigo-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-xs text-slate-700">{feature.text}</span>
-                    </div>
+                    <motion.div 
+                      key={index}
+                      className="flex items-start gap-3 p-4 bg-gradient-to-br from-white to-gray-50/50 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 1.0 + index * 0.1 }}
+                      whileHover={{ scale: 1.02 }}
+                    >
+                      <motion.div
+                        initial={{ rotate: 0 }}
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 3, delay: 1.2 + index * 0.2, repeat: Infinity, ease: "linear" }}
+                      >
+                        <IconComponent className={`h-5 w-5 ${feature.color} flex-shrink-0 mt-0.5`} />
+                      </motion.div>
+                      <span className="text-sm text-slate-700 font-medium">{feature.text}</span>
+                    </motion.div>
                   );
                 })}
               </div>
             </CardContent>
-          </Card>
+          </AnimatedCard>
         </div>
       </div>
     </div>

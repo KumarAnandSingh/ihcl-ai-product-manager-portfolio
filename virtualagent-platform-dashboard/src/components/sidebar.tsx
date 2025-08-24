@@ -17,6 +17,7 @@ import {
   Shield,
   Users,
   Zap,
+  Activity,
 } from "lucide-react"
 
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -36,6 +37,12 @@ export function Sidebar({ className }: SidebarProps) {
       icon: Bot,
       href: "/agents",
       color: "text-violet-500",
+    },
+    {
+      label: "Agentic Workflows",
+      icon: Activity,
+      href: "/agentic-workflows",
+      color: "text-purple-600",
     },
     {
       label: "Analytics",
@@ -129,6 +136,12 @@ export function MobileSidebar() {
       icon: Bot,
       href: "/agents",
       color: "text-violet-500",
+    },
+    {
+      label: "Agentic Workflows",
+      icon: Activity,
+      href: "/agentic-workflows",
+      color: "text-purple-600",
     },
     {
       label: "Analytics",

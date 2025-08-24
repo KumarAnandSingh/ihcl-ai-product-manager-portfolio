@@ -18,7 +18,11 @@ import {
   MessageSquare,
   DollarSign,
   Upload,
-  Eye
+  Eye,
+  Zap,
+  Activity,
+  CheckCircle2,
+  AlertCircle
 } from "lucide-react"
 import { 
   DropdownMenu,
@@ -192,6 +196,90 @@ export default function AgentsPage() {
           </Card>
         ))}
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Activity className="h-5 w-5 text-purple-600" />
+            Agent Execution Monitor
+          </CardTitle>
+          <CardDescription>
+            Real-time monitoring of agentic workflow executions
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {/* Live Execution Card */}
+            <div className="border rounded-lg p-4 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2">
+                  <Zap className="h-4 w-4 text-purple-600 animate-pulse" />
+                  <span className="font-medium text-sm">Security Response Agent</span>
+                </div>
+                <Badge variant="default" className="animate-pulse">Executing</Badge>
+              </div>
+              <p className="text-sm text-muted-foreground mb-3">
+                Processing unauthorized access incident - coordinating multi-system response
+              </p>
+              <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                <div className="flex items-center gap-1">
+                  <CheckCircle2 className="h-3 w-3 text-green-600" />
+                  3 tools completed
+                </div>
+                <div className="flex items-center gap-1">
+                  <Activity className="h-3 w-3 text-blue-600" />
+                  1 tool running
+                </div>
+                <div className="flex items-center gap-1">
+                  <Clock className="h-3 w-3" />
+                  2.1s elapsed
+                </div>
+              </div>
+              <Progress value={75} className="mt-3 h-2" />
+            </div>
+
+            {/* Recent Completions */}
+            <div className="grid gap-2 md:grid-cols-2">
+              <div className="border rounded-lg p-3">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-medium text-sm">Guest Service Agent</span>
+                  <Badge variant="secondary">Completed</Badge>
+                </div>
+                <p className="text-xs text-muted-foreground mb-2">
+                  Resolved guest complaint autonomously - 91% confidence
+                </p>
+                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <span>₹8,500 cost saved</span>
+                  <span>1.8s execution</span>
+                </div>
+              </div>
+
+              <div className="border rounded-lg p-3">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-medium text-sm">Revenue Optimization Agent</span>
+                  <Badge variant="secondary">Completed</Badge>
+                </div>
+                <p className="text-xs text-muted-foreground mb-2">
+                  Dynamic pricing adjustment - 94% confidence decision
+                </p>
+                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <span>₹15,000 revenue gain</span>
+                  <span>3.1s execution</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-2">
+              <div className="text-sm text-muted-foreground">
+                <span className="font-medium text-green-600">87%</span> automation success rate
+              </div>
+              <Button variant="outline" size="sm" asChild>
+                <a href="/agentic-workflows">View All Workflows →</a>
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       <Card>
         <CardHeader>

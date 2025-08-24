@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { AnimatedCard, AnimatedMetricCard } from "@/components/animated-card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
@@ -69,56 +70,46 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Key Metrics */}
+      {/* Enhanced Agentic AI Metrics with Animations */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Active Agents</CardTitle>
-            <Bot className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{activeAgents}</div>
-            <p className="text-xs text-muted-foreground">
-              +2 from last month
-            </p>
-          </CardContent>
-        </Card>
-        <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Conversations</CardTitle>
-            <Activity className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{totalConversations.toLocaleString()}</div>
-            <p className="text-xs text-muted-foreground">
-              +15.2% from last month
-            </p>
-          </CardContent>
-        </Card>
-        <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Success Rate</CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{avgSuccessRate.toFixed(1)}%</div>
-            <p className="text-xs text-muted-foreground">
-              +1.5% from last month
-            </p>
-          </CardContent>
-        </Card>
-        <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Cost</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">${totalCost.toFixed(2)}</div>
-            <p className="text-xs text-muted-foreground">
-              -8.2% from last month
-            </p>
-          </CardContent>
-        </Card>
+        <div onClick={() => router.push("/agentic-workflows")}>
+          <AnimatedMetricCard
+            title="Autonomous Workflows"
+            value="23"
+            description="87% success rate, 2.3s avg response"
+            icon={Zap}
+            trend="up"
+            trendValue="5"
+            delay={0}
+          />
+        </div>
+        <AnimatedMetricCard
+          title="Conversations"
+          value={totalConversations.toLocaleString()}
+          description="from last month"
+          icon={Activity}
+          trend="up"
+          trendValue="15.2%"
+          delay={0.1}
+        />
+        <AnimatedMetricCard
+          title="Success Rate"
+          value={`${avgSuccessRate.toFixed(1)}%`}
+          description="from last month"
+          icon={TrendingUp}
+          trend="up"
+          trendValue="1.5%"
+          delay={0.2}
+        />
+        <AnimatedMetricCard
+          title="Total Cost"
+          value={`$${totalCost.toFixed(2)}`}
+          description="from last month"
+          icon={DollarSign}
+          trend="down"
+          trendValue="8.2%"
+          delay={0.3}
+        />
       </div>
 
       {/* Charts and Analytics */}

@@ -26,7 +26,12 @@ import {
   Clock,
   DollarSign,
   MessageSquare,
-  ThumbsUp
+  ThumbsUp,
+  Brain,
+  Zap,
+  Target,
+  Shield,
+  CheckCircle2
 } from "lucide-react"
 import { analyticsData } from "@/lib/mock-data"
 
@@ -39,52 +44,85 @@ export default function AnalyticsPage() {
         <h2 className="text-3xl font-bold tracking-tight">Analytics & Monitoring</h2>
       </div>
 
-      {/* Key Performance Metrics */}
+      {/* Agentic AI Performance Metrics */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {analyticsData.performanceMetrics.map((metric) => (
-          <Card key={metric.metric}>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{metric.metric}</CardTitle>
-              {metric.trend === 'up' ? (
-                <TrendingUp className="h-4 w-4 text-green-600" />
-              ) : (
-                <TrendingDown className="h-4 w-4 text-red-600" />
-              )}
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">
-                {metric.value}{metric.unit}
-              </div>
-              <p className={`text-xs ${
-                metric.trend === 'up' ? 'text-green-600' : 'text-red-600'
-              }`}>
-                {metric.trend === 'up' ? '+' : ''}{metric.change}{metric.unit} from last month
-              </p>
-            </CardContent>
-          </Card>
-        ))}
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Autonomous Decision Rate</CardTitle>
+            <Brain className="h-4 w-4 text-purple-600" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">87%</div>
+            <p className="text-xs text-green-600">
+              +12% from last month
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Tool Execution Success</CardTitle>
+            <Zap className="h-4 w-4 text-blue-600" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">94%</div>
+            <p className="text-xs text-green-600">
+              +8% from last month
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Multi-Step Workflows</CardTitle>
+            <Target className="h-4 w-4 text-orange-600" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">156</div>
+            <p className="text-xs text-green-600">
+              +23 from last month
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Business Impact Score</CardTitle>
+            <TrendingUp className="h-4 w-4 text-green-600" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">₹8.4L</div>
+            <p className="text-xs text-green-600">
+              Monthly value generated
+            </p>
+          </CardContent>
+        </Card>
       </div>
 
-      <Tabs defaultValue="overview" className="space-y-4">
+      <Tabs defaultValue="agentic" className="space-y-4">
         <TabsList>
-          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="agentic">Agentic AI Metrics</TabsTrigger>
           <TabsTrigger value="performance">Performance</TabsTrigger>
           <TabsTrigger value="costs">Cost Analysis</TabsTrigger>
           <TabsTrigger value="usage">Usage Patterns</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="overview">
+        <TabsContent value="agentic">
           <div className="grid gap-4 md:grid-cols-2">
             <Card>
               <CardHeader>
-                <CardTitle>Conversation Trends</CardTitle>
+                <CardTitle>Autonomous Decision Trends</CardTitle>
                 <CardDescription>
-                  Monthly conversation volume and resolution rates
+                  Agent decision-making confidence and success rates over time
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={analyticsData.conversationTrends}>
+                  <LineChart data={[
+                    { month: 'Jan', decisions: 1247, success: 89, confidence: 91 },
+                    { month: 'Feb', decisions: 1456, success: 91, confidence: 93 },
+                    { month: 'Mar', decisions: 1689, success: 94, confidence: 94 },
+                    { month: 'Apr', decisions: 1823, success: 87, confidence: 92 },
+                    { month: 'May', decisions: 2145, success: 93, confidence: 95 },
+                    { month: 'Jun', decisions: 2398, success: 96, confidence: 97 }
+                  ]}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="month" />
                     <YAxis />
@@ -92,17 +130,24 @@ export default function AnalyticsPage() {
                     <Legend />
                     <Line 
                       type="monotone" 
-                      dataKey="conversations" 
+                      dataKey="decisions" 
                       stroke="#8884d8" 
                       strokeWidth={2}
-                      name="Total Conversations"
+                      name="Total Decisions"
                     />
                     <Line 
                       type="monotone" 
-                      dataKey="resolved" 
+                      dataKey="success" 
                       stroke="#82ca9d" 
                       strokeWidth={2}
-                      name="Resolved"
+                      name="Success Rate %"
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="confidence" 
+                      stroke="#ff8042" 
+                      strokeWidth={2}
+                      name="Confidence %"
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -111,31 +156,125 @@ export default function AnalyticsPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Cost Breakdown</CardTitle>
+                <CardTitle>Tool Integration Performance</CardTitle>
                 <CardDescription>
-                  Distribution of platform costs by service
+                  Multi-system tool execution success by category
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
-                  <PieChart>
-                    <Pie
-                      data={analyticsData.costBreakdown}
-                      cx="50%"
-                      cy="50%"
-                      labelLine={false}
-                      label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                      outerRadius={80}
-                      fill="#8884d8"
-                      dataKey="value"
-                    >
-                      {analyticsData.costBreakdown.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                      ))}
-                    </Pie>
-                    <Tooltip formatter={(value) => [`$${value}`, 'Cost']} />
-                  </PieChart>
+                  <BarChart data={[
+                    { category: 'Access Control', executions: 456, success: 94 },
+                    { category: 'Payment Systems', executions: 234, success: 91 },
+                    { category: 'Notifications', executions: 789, success: 97 },
+                    { category: 'Hotel PMS', executions: 345, success: 89 },
+                    { category: 'Security Systems', executions: 123, success: 88 }
+                  ]}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="category" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="executions" fill="#8884d8" name="Total Executions" />
+                    <Bar dataKey="success" fill="#82ca9d" name="Success Rate %" />
+                  </BarChart>
                 </ResponsiveContainer>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle>Workflow Complexity Analysis</CardTitle>
+                <CardDescription>
+                  Multi-step workflow execution patterns
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {[
+                    { steps: '2-3 Steps', workflows: 234, avgTime: '1.2s', success: 97 },
+                    { steps: '4-6 Steps', workflows: 156, avgTime: '2.8s', success: 94 },
+                    { steps: '7+ Steps', workflows: 89, avgTime: '4.1s', success: 87 }
+                  ].map((workflow) => (
+                    <div key={workflow.steps} className="flex items-center justify-between p-3 border rounded-lg">
+                      <div>
+                        <p className="font-medium">{workflow.steps}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {workflow.workflows} workflows • {workflow.avgTime} avg
+                        </p>
+                      </div>
+                      <div className="text-right">
+                        <p className="font-medium text-green-600">{workflow.success}%</p>
+                        <p className="text-xs text-muted-foreground">Success</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Business Impact Categories</CardTitle>
+                <CardDescription>
+                  Value generation across operational areas
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {[
+                    { category: 'Guest Experience', impact: '₹3.2L', improvement: '+15%' },
+                    { category: 'Security & Compliance', impact: '₹2.8L', improvement: '+22%' },
+                    { category: 'Operational Efficiency', impact: '₹1.9L', improvement: '+8%' },
+                    { category: 'Revenue Optimization', impact: '₹4.1L', improvement: '+18%' }
+                  ].map((impact) => (
+                    <div key={impact.category} className="flex items-center justify-between p-3 border rounded-lg">
+                      <div>
+                        <p className="font-medium">{impact.category}</p>
+                        <p className="text-sm text-muted-foreground">Monthly value</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="font-medium">{impact.impact}</p>
+                        <p className="text-xs text-green-600">{impact.improvement}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Escalation Patterns</CardTitle>
+                <CardDescription>
+                  Human intervention requirements analysis
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium">Full Automation</span>
+                    <Badge variant="secondary">87%</Badge>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium">Human Review</span>
+                    <Badge variant="outline">8%</Badge>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium">Manual Override</span>
+                    <Badge variant="destructive">5%</Badge>
+                  </div>
+                  <div className="pt-2 border-t">
+                    <p className="text-xs text-muted-foreground mb-2">Top escalation reasons:</p>
+                    <div className="space-y-1 text-xs">
+                      <div>• Regulatory compliance review (3%)</div>
+                      <div>• Complex guest disputes (1.5%)</div>
+                      <div>• System integration failures (0.5%)</div>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
