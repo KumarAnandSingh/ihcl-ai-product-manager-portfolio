@@ -19,7 +19,7 @@ This portfolio represents a paradigm shift from traditional automation to **true
 
 ## 🏨 **Live Platforms**
 
-### 🌟 [**VirtualAgent Platform Dashboard**](http://localhost:3002)
+### 🌟 [**VirtualAgent Platform Dashboard**](http://localhost:3004)
 *Enterprise-grade AI orchestration for hotel operations*
 - **Autonomous Decision Making**: 96% confidence-based reasoning
 - **Real-time Agentic Workflows**: Multi-step intelligent automation
@@ -205,7 +205,7 @@ ELEVENLABS_API_KEY=your_elevenlabs_key_here  # Optional: for premium voice
 ## 🎬 **Live Platform Demonstrations**
 
 ### 🌐 **Interactive Portfolio Access**
-🔗 **[VirtualAgent Platform Dashboard](http://localhost:3002)** - Enterprise AI agent orchestration and monitoring  
+🔗 **[VirtualAgent Platform Dashboard](http://localhost:3004)** - Enterprise AI agent orchestration and monitoring  
 🔗 **[TelecomAssist AI Platform](http://localhost:3005)** - Multilingual voice customer service automation  
 🔗 **[Agentic Security Operations](http://localhost:3006)** - Autonomous incident response and threat management  
 
@@ -296,7 +296,7 @@ cd ihcl-ai-product-manager-portfolio
 
 # OR manual platform startup:
 
-# 1. VirtualAgent Platform (Port 3002)
+# 1. VirtualAgent Platform (Port 3004)
 cd virtualagent-platform-dashboard && npm install && npm run dev
 
 # 2. TelecomAssist Platform (Port 3005)  
