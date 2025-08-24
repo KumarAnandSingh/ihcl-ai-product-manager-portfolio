@@ -173,6 +173,7 @@ ELEVENLABS_API_KEY=your_elevenlabs_key_here  # Optional: for premium voice
 ## 📄 Documentation & Strategy
 
 ### 📋 Product Requirements & Architecture
+- 🚀 [**Deployment Status Report**](./DEPLOYMENT_STATUS.md) - Live platform status and performance metrics
 - 🔐 [**Security Incident Response System PRD**](./docs/security-incident-prd.md) - Comprehensive incident management specifications
 - 🏨 [**Hotel Operations Assistant Architecture**](./docs/hotel-ops-architecture.md) - Multi-agent workflow design
 - 📊 [**AI Evaluation Framework Design**](./docs/evaluation-framework.md) - Performance benchmarking methodology
@@ -288,7 +289,7 @@ ELEVENLABS_API_KEY=your_elevenlabs_key_here  # Optional: for premium voice
 ### ⚡ **One-Command Launch**
 ```bash
 # Clone and initialize the complete portfolio
-git clone https://github.com/your-username/ihcl-ai-product-manager-portfolio
+git clone https://github.com/KumarAnandSingh/ihcl-ai-product-manager-portfolio
 cd ihcl-ai-product-manager-portfolio
 
 # Launch all platforms simultaneously
